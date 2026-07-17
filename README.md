@@ -34,7 +34,7 @@ The page will automatically replace the placeholders with embedded Drive video p
 
 ## Current sales details
 
-- WhatsApp contact is configured through JavaScript.
+- WhatsApp/Phone: 08136963037
 - Email: solutionsking8@gmail.com
 - Location: Port Harcourt, Rivers State
 
@@ -73,13 +73,3 @@ The page is configured for two Google Drive videos. Add the two file IDs in `scr
 
 ## Privacy update
 The WhatsApp button does not display the phone number. The number remains inside the secure WhatsApp destination URL so the button can open the correct chat.
-
-
-## Video and email updates
-
-- The page supports exactly two Google Drive videos.
-- Paste either full Google Drive share links or file IDs into `script.js`.
-- Videos play inside the page through Google Drive's `/preview` player.
-- The email action is generated in JavaScript as a `mailto:` link.
-- The public phone number is not displayed anywhere on the page.
-- The brochure is stored at `assets/CAT-320CL-Sales-Brochure.pdf`.
