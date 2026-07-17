@@ -32,19 +32,60 @@ const validVideos = driveVideos
 if (videoGrid) {
   videoGrid.innerHTML = validVideos.map((video) => `
     <article class="video-card">
-      <div class="video-frame">
-        <iframe
-        src="https://drive.google.com/file/d/${video.id}/preview"
-        title="${video.title}"
-        allow="autoplay; encrypted-media; fullscreen"
-        allowfullscreen
-        loading="lazy">
-        </iframe>
-      </div>
+      <button class="video-launch" type="button"
+        data-video-id="${video.id}"
+        data-video-title="${video.title}"
+        aria-label="Play ${video.title}">
+        <img
+          src="https://drive.google.com/thumbnail?id=${video.id}&sz=w1200"
+          alt="${video.title}"
+          loading="lazy">
+        <span class="video-launch-overlay">
+          <span class="video-play-button">▶</span>
+          <span>Tap to play video</span>
+        </span>
+      </button>
       <div class="video-title">${video.title}</div>
+      <a class="video-drive-link"
+         href="https://drive.google.com/file/d/${video.id}/view"
+         target="_blank"
+         rel="noopener">Open directly in Google Drive</a>
     </article>
   `).join("");
 }
+
+const videoModal = document.getElementById("videoModal");
+const videoModalPlayer = document.getElementById("videoModalPlayer");
+const videoModalClose = document.getElementById("videoModalClose");
+
+function closeVideoModal() {
+  if (!videoModal || !videoModalPlayer) return;
+  videoModal.classList.remove("is-open");
+  videoModal.setAttribute("aria-hidden", "true");
+  videoModalPlayer.src = "";
+  document.body.classList.remove("video-modal-open");
+}
+
+document.addEventListener("click", (event) => {
+  const button = event.target.closest(".video-launch");
+  if (!button || !videoModal || !videoModalPlayer) return;
+
+  const videoId = button.dataset.videoId;
+  const title = button.dataset.videoTitle || "Machine video";
+  videoModalPlayer.title = title;
+  videoModalPlayer.src = `https://drive.google.com/file/d/${videoId}/preview`;
+  videoModal.classList.add("is-open");
+  videoModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("video-modal-open");
+});
+
+videoModalClose?.addEventListener("click", closeVideoModal);
+videoModal?.addEventListener("click", (event) => {
+  if (event.target === videoModal) closeVideoModal();
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeVideoModal();
+});
 
 const emailUser = ["solutions", "king8"].join("");
 const emailDomain = ["gmail", "com"].join(".");
