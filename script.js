@@ -32,13 +32,15 @@ const validVideos = driveVideos
 if (videoGrid) {
   videoGrid.innerHTML = validVideos.map((video) => `
     <article class="video-card">
-      <iframe
+      <div class="video-frame">
+        <iframe
         src="https://drive.google.com/file/d/${video.id}/preview"
         title="${video.title}"
         allow="autoplay; encrypted-media; fullscreen"
         allowfullscreen
         loading="lazy">
-      </iframe>
+        </iframe>
+      </div>
       <div class="video-title">${video.title}</div>
     </article>
   `).join("");
