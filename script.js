@@ -6,12 +6,12 @@
   3. Paste either the full share link or only the file ID below.
 
   Example full link:
-  https://drive.google.com/file/d/FILE_ID/view?usp=sharing
+  https://drive.google.com/file/d/1QHITGxsM7RCsn9fF-yOGC2K9MUXE2en6/view?usp=sharing
 */
 
 const driveVideos = [
-  // { source: "PASTE_FIRST_GOOGLE_DRIVE_LINK_OR_ID", title: "Engine start and walk-around" },
-  // { source: "PASTE_SECOND_GOOGLE_DRIVE_LINK_OR_ID", title: "Boom and bucket operation" },
+  // { source: "https://drive.google.com/file/d/1QHITGxsM7RCsn9fF-yOGC2K9MUXE2en6/view?usp=sharing", title: "Engine start and walk-around" },
+  // { source: "https://drive.google.com/file/d/1P4DUU0euHpxvD0_ROcLCKsiStdLPjCPh/view?usp=sharing", title: "Boom and bucket operation" },
 ];
 
 function extractDriveFileId(value) {
