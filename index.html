@@ -91,7 +91,23 @@
           <p>Watch the CAT 320CL machine videos directly from this page.</p>
         </div>
 
-        <div class="video-grid" id="videoGrid"></div>
+        <div class="video-grid" id="videoGrid">
+      <article class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="./assets/videos/cat.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="video-title">CAT 320CL Engine Start and Walk-Around</div>
+      </article>
+
+      <article class="video-card">
+        <video controls playsinline preload="metadata">
+          <source src="./assets/videos/cat-2.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div class="video-title">CAT 320CL Boom and Bucket Operation</div>
+      </article>
+    </div>
         <div class="brochure-card">
           <div>
             <p class="eyebrow">SALES BROCHURE</p>
@@ -167,13 +183,5 @@
     <div class="wrap">CAT 320CL Swamp Buggy Sales Listing • Port Harcourt, Nigeria</div>
   </footer>
   <script src="./script.js"></script>
-
-  <div class="video-modal" id="videoModal" aria-hidden="true">
-    <button class="video-modal-close" id="videoModalClose" type="button" aria-label="Close video">×</button>
-    <div class="video-modal-box">
-      <iframe id="videoModalPlayer" title="Machine video" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
-    </div>
-  </div>
-
 </body>
 </html>
