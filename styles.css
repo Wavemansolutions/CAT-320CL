@@ -334,3 +334,20 @@ body.video-modal-open{
     padding: 12px 14px;
   }
 }
+
+
+/* Video thumbnail/poster styling */
+.video-card video[poster] {
+  object-fit: cover;
+}
+
+.video-card video:focus {
+  outline: 3px solid #ffc400;
+  outline-offset: 2px;
+}
+
+@media (max-width: 650px) {
+  .video-card video[poster] {
+    object-fit: cover;
+  }
+}
